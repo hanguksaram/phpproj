@@ -10,6 +10,10 @@
     <script src="<?php echo base_url();?>assets/js/popper.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+    <style>.carousel {
+            /*width: 100%;
+            height: 70;*/
+        }</style>
 </head>
 <body>
 
@@ -21,16 +25,39 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/welcome">Главная <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/index.php/articles">Статьи</a>
+            <a class="nav-item nav-link" href="/index.php/articles/getarticles">Статьи</a>
+            <a class="nav-item nav-link" href="/index.php/articles">Добавить Статью</a>
             <a class="nav-item nav-link" href="/index.php/auth/">Войти/Зарегистрироваться</a>
 
         </div>
     </div>
 </nav>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="..." alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Third slide">
+        </div>
+    </div>
+</div>
 
+</br>
 
+<?php $this->load->view($main_view);
 
-<?php $this->load->view($main_view); ?>
+if ($main_view === 'getarticles') {
+    foreach ($result as $object){
+        echo $object->title.'<br>';
+        echo $object->body.'<br>';
+        echo '</br></br>';
+
+    }
+} ?>
 
 </body>
 </html>

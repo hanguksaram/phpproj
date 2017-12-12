@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: user
  * Date: 12/10/17
- * Time: 11:09 PM
+ * Time: 11:09 PM.
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Articles extends CI_Controller{
@@ -24,14 +24,11 @@ class Articles extends CI_Controller{
     }
     public function createArticle(){
 
-        $youtubeLink = $this->input->post('youtubeLink');
-        $videoDescription = $this->input->post('videoDescription');
-        $articlePrice = $this->input->post('articlePrice');
-        $articleTitle = $this->input->post('articleTitle');
-        $articleBody = $this->input->post('articleBody');
+        $youtubeLink = $this->input->post();
+        echo json_encode($youtubeLink);
 
-        $this->article_model->insertArticle($youtubeLink, $videoDescription, $articlePrice, $articleTitle, $articleBody);
-        $this->getArticles();
+        //$this->article_model->insertArticle($youtubeLink, $videoDescription, $articlePrice, $articleTitle, $articleBody);
+        //$this->getArticles();
 
 
     }

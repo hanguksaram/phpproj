@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12/11/17
- * Time: 11:30 PM
- */
+foreach ($result as $object){
+    echo $object->title.'<br>';
+    echo $object->body.'<br>';
+    echo '</br></br>';
+
+}

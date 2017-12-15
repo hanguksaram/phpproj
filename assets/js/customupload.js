@@ -56,8 +56,8 @@ function insertArticle(){
         url: 'articles/createarticle',
         type: 'post',
         data: articleForm,
-        beforeSend: AddinngSpinner();
-        complete: RemoveSpinner();
+        beforeSend: AddinngSpinner(),
+        complete: RemoveSpinner(),
         success: function(data) {
             alert('статья успешно добавлена');
             console.log(data);

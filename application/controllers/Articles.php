@@ -24,10 +24,21 @@ class Articles extends CI_Controller{
     }
     public function createArticle(){
 
-        $youtubeLink = $this->input->post();
-        echo json_encode($youtubeLink);
 
-        //$this->article_model->insertArticle($youtubeLink, $videoDescription, $articlePrice, $articleTitle, $articleBody);
+        $data = $this->input->post();
+
+       //$path = str_replace('\\', '', "{$data["articleImages"][0]['url']}");
+        //echo json_encode($data);// echo "<pre>";
+      // print_r($path);
+      // echo "</pre>";
+
+     $this->article_model->insertArticle($data);
+      //echo "<pre>";
+      // print_r($some);
+      // echo "</pre>";
+        //echo json_encode($some->id);
+
+
         //$this->getArticles();
 
 
@@ -37,6 +48,7 @@ class Articles extends CI_Controller{
 
         $data['result'] = $this->article_model->getArticles();
         $data['main_view'] = "getarticles";
+        //print_r($data['result']);
         $this->load->view('layout/main', $data);
 
     }

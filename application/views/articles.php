@@ -2,8 +2,8 @@
 
 <div class="form-group">
 <input class="form-control" type="text" name="youtubeLink" placeholder="Ссылка Youtube" id="yLink" />
-<textarea class="form-control" name="videoDescription" cols="40" rows="10"  placeholder="Описание видео" id="videoDiscr" ></textarea>
-
+<textarea class="form-control" name="videoDescription" cols="40" rows="10"  placeholder="Описание видео" id="videoDescr" ></textarea>
+    <div id="files" class="files"></div>
 <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
         <span>Добавить изображение</span>
@@ -15,7 +15,7 @@
 <!-- The global progress bar -->
 
 <!-- The container for the uploaded files -->
-<div id="files" class="files"></div>
+
 <select class="form-control" name="articlePrice" id="aPrice">
     <option value="0" selected="selected">бесплатная</option>
     <option value="1">платная</option>
@@ -26,7 +26,20 @@
  <input type="text" name="articleTitle" value="" id="aTitle" class="form-control"  placeholder="Заголовок статьи"  />
 <textarea name="articleBody" cols="40" rows="10" id="aBody" class="form-control"  placeholder="Текст статьи" ></textarea>
 </div>
+
+<div id="filesdocs" class="files"></div>
+<span class="btn btn-success fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Добавить документ</span>
+   <!-- The file input field used as target for the file upload widget -->
+        <input id="fileuploaddocs" type="file" name="files[]" multiple>
+    </span>
+<br>
+<br>
+<!-- The global progress bar -->
 <div class="btn btn-primary" id="insertArticleBtn">Жмяк</div>
+<!-- The container for the uploaded files -->
+
 
 
 
